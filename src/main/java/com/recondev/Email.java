@@ -1,5 +1,6 @@
 package com.recondev;
 
+import java.util.Map;
 import java.util.Scanner;
 
 public class Email {
@@ -16,6 +17,7 @@ public class Email {
 
 
     public Email(String firstName, String lastName) {
+
         this.firstName = firstName;
         this.lastName = lastName;
         //System.out.println("Email created: " + this.firstName + " " + this.lastName);
@@ -72,6 +74,17 @@ public class Email {
 //        } else {
 //            return "";
 //        }
+    }
+
+    public Map<String,String> getUserInfo() {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter your first name: ");
+        String firstName = in.nextLine();
+        System.out.print("Enter your last name: ");
+        String lastName = in.nextLine();
+
+        Map<String,String> userInfo = Map.of("firstName",firstName,"lastName",lastName);
+        return userInfo;
     }
 
 
